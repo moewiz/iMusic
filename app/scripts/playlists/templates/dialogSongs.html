@@ -1,0 +1,36 @@
+<md-dialog aria-label="Choose song">
+  <form ng-cloak>
+    <md-toolbar>
+      <div class="md-toolbar-tools" layout-align="center center">
+        <h2>{{ 'playlist.view.chooseSong' | i18next }}</h2>
+      </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+      <div ng-if="songs.length > 0" class="md-dialog-content">
+        <md-list ng-cloak class="song-list">
+          <md-list-item ng-repeat="song in songs | orderBy:'name'" class="md-2-line">
+            <img alt="{{ song.name }}" ng-src="images/song.png" class="md-avatar" />
+            <div class="md-list-item-text">
+              <div class="song-name">{{ song.name }}</div>
+              <p class="song-artist">{{ song.artist }}</p>
+            </div>
+            <md-checkbox class="md-secondary song-check" aria-label="checkbox" ng-model="song.check"></md-checkbox>
+          </md-list-item>
+        </md-list>
+      </div>
+      <div ng-if="songs.length == 0" class="md-dialog-content">
+        {{ 'playlist.view.noSong' | i18next }} <a ng-href="#/songs" ng-click="skip()">{{ 'common.add' | i18next }} {{ 'common.song' | i18next }}</a>
+      </div>
+    </md-dialog-content>
+
+    <md-dialog-actions>
+      <md-button ng-click="skip()" style="color: #0B87F4">
+        {{ 'common.skip' | i18next }}
+      </md-button>
+      <md-button ng-click="answer(songs)" style="color: #0B87F4">
+        {{ 'common.finish' | i18next }}
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>

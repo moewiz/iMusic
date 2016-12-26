@@ -1,0 +1,126 @@
+table .table-header tr th,
+table .table-body tr td {
+  vertical-align: initial;
+}
+
+.ov-table.table {
+  margin-bottom: 10px;
+}
+
+.ov-table .table-header th {
+  border: none;
+  outline: none;
+  padding: 8px 8px 0 8px;
+  text-transform: capitalize;
+}
+
+.ov-table .table-header {
+  border: none;
+  border-bottom: 1px solid #ddd;
+  padding: 8px 0 0 0;
+}
+
+.ov-table .table-header > table {
+  margin-bottom: 0;
+}
+
+.ov-table .table-body {
+  border: none;
+  padding: 0;
+}
+
+.ov-table .content-table {
+  max-height: 528px;
+  overflow: auto;
+}
+
+.ov-table .content-table tr {
+  outline: none;
+}
+
+.table-header tr th,
+.table-body tr td {
+  width: 30%;
+}
+
+.table-header tr th.input-checkbox,
+.table-body tr td.input-checkbox {
+  width: 4%;
+}
+
+.table-header tr th.action-column,
+.table-body tr td.action-column {
+  width: 58%;
+}
+
+.ov-table .table-body .tr-selected {
+  background-color: #f5f5f5;
+}
+
+@media screen and (max-width: 504px) {
+
+  /*song name & artist 1 column 2 line*/
+  .content-table .data-row:nth-of-type(2) {
+    display: list-item;
+    font-weight: 600;
+    list-style: none;
+    padding: 8px 4px 4px 8px;
+    position: relative;
+    top: -13px;
+  }
+  .content-table .data-row:nth-of-type(3) {
+    border: none;
+    display: list-item;
+    font-style: italic;
+    list-style: none;
+    padding: 0 0 0 8px;
+    position: relative;
+    top: -10px;
+  }
+
+  .table-body tr td.data-row{
+    width: 100%;
+  }
+
+  .table-body tr td.action-column {
+    width: 10%;
+  }
+
+  .content-table {
+    height: calc(50vh - 30px);
+  }
+
+  .ov-table .table-header,
+  .md-button.miniable:last-child {
+    display: none;
+  }
+
+}
+
+@media screen and (max-width: 636px){
+
+  .md-button.miniable {
+    margin: 6px;
+    min-width: 36px;
+  }
+
+  .md-button.miniable span {
+    display: none;
+  }
+}
+
+.table-header .fa.sort-icon {
+  display: none;
+
+  -webkit-transition: transform 0.15s, display 0s;
+  -moz-transition: transform 0.15s, display 0s;
+  transition: transform 0.15s, display 0s;
+}
+
+.table-header .fa.show-icon {
+  display: inline-block;
+}
+
+md-checkbox.md-checked .md-icon {
+  background-color: #03a9f4;
+}

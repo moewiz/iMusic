@@ -1,0 +1,84 @@
+{
+  "appTitle": "iMusic",
+  "common": {
+    "welcome": "Welcome to iMusic",
+    "appName": "Music Manager",
+    "song": "Songs",
+    "playlist":"Playlists",
+    "manageSong": "Manage Songs",
+    "managePlaylist": "Manage Playlists",
+    "name": "Name",
+    "artist": "Artist",
+    "create": "Create",
+    "apply": "Apply",
+    "ok": "OK",
+    "cancel": "Cancel",
+    "add": "Add",
+    "edit": "Edit",
+    "delete": "Delete",
+    "search": "Search",
+    "library": "Library",
+    "success": "Successfully!",
+    "error": "Error",
+    "skip": "Skip",
+    "finish": "Finish"
+  },
+  "component": {
+    "myList": {
+      "syncBtn": "Sync",
+      "hideDetails": "Hide",
+      "noRows": "Nothing to show"
+    },
+    "ovTable": {
+      "editButton": "Edit",
+      "deleteButton": "Delete",
+      "action": "Actions"
+    },
+    "ovBreadcrumbs": {
+      "home": "Home"
+    }
+  },
+  "song": {
+    "view": {
+      "createSong": "Create Song",
+      "songName": "Song Name",
+      "editSong": "Edit Song",
+      "songCantEmpty": "Song name cannot be empty",
+      "songTooLong": "Song name is too long"
+    },
+    "confirm" : {
+      "delete_title": "Delete Song",
+      "delete_content": "Are you sure you want to delete this song?",
+      "delete_multi_title": "Delete Multiple Songs",
+      "delete_multi_content": "Are you sure you want to delete a chosen song(s)?"
+    },
+    "notification" : {
+      "delete_failed": "Failed to delete this song",
+      "failed": "Failed!"
+    }
+  },
+  "playlist": {
+    "view": {
+      "createPlaylist": "Create Playlist",
+      "editPlaylist": "Edit Playlist",
+      "songInPlaylist": "Song in playlist",
+      "playlistName": "Playlist Name",
+      "playlistNoSong": "No songs, tap Edit to update playlist.",
+      "playlistCantEmpty": "Playlist name cannot be empty",
+      "playlistNameTooLong": "Playlist name is too long",
+      "chooseSong": "Choose song",
+      "noSong": "No songs, please create songs."
+    },
+    "notification": {
+      "playlistExisted": "Playlist name have been existed",
+      "failed": "Failed!",
+      "songExisted": "This song have been existed in playlist"
+    },
+    "confirm" : {
+      "deleteTitle": "Delete Playlist",
+      "deleteContent": "Are you sure you want to delete this playlist?",
+      "deleteMultiTitle": "Delete Multiple Playlist",
+      "deleteMultiContent": "Are you sure you want to delete a chosen playlist(s)?"
+    }
+  }
+}

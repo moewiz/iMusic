@@ -1,0 +1,62 @@
+.my-list
+  border-left 2px solid #eee
+  margin-left 20px
+
+  &.umbala
+    .hide-details
+      color #0B87F4
+      opacity 1
+    .list-content
+      opacity 1
+
+  .sync-action
+    float right
+    font-style italic
+    color #0B87F4
+    border-radius 3px
+    padding 5px 20px
+    margin 0 10px 5px
+    font-size 14px
+    background-color #eee
+
+    &:hover
+      font-weight 600
+
+  .hide-details
+    opacity 0
+    float right
+    cursor pointer
+    border-radius 3px
+    padding 5px 15px
+    font-style italic
+    margin 0 5px 5px
+    outline none
+    &:hover
+      background-color #eee
+      color #0B87F4
+    i
+      font-weight 600
+
+  .list-content
+    clear: both
+    max-height 545px
+    overflow auto
+    position relative
+    opacity 0
+    transition all ease 1s
+
+
+.list-content
+  .header1
+  .header2
+    display list-item
+    list-style none
+
+  .header1
+    font-weight 600
+
+  .header2
+    font-style italic
+
+  .row-check
+    margin-left 16px

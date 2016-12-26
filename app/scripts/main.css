@@ -1,0 +1,100 @@
+/**** Generic Classes ****/
+.left {float: left}
+.right {float: right}
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+body {
+  font-family: "Arimo", "Lato", "Lucida Sans", Geneva, Verdana, sans-serif;
+  color: #212121;
+}
+
+.language {
+  margin: 0;
+}
+
+.md-icon-button.menuBtn {
+}
+
+.md-sidenav-left {
+  overflow-x: hidden; /* hide horizontal scrollbar, y: vertical */
+}
+
+md-sidenav.md-sidenav-left.ng-isolate-scope._md.flex,
+md-sidenav.md-sidenav-left.ng-isolate-scope._md.flex.md-closed.md-locked-open {
+  width: 240px;
+}
+
+md-sidenav.md-sidenav-left.md-closed.ng-isolate-scope._md.md-whiteframe-4dp.flex.md-locked-open {
+  box-shadow: 5px 0 5px -5px rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-width: 460px) {
+  md-sidenav.md-sidenav-left.ng-isolate-scope._md.flex {
+    width: 180px;
+    min-width: 180px;
+  }
+}
+
+.menu-list .md-button {
+  color: inherit;
+  text-align: left;
+  font-weight: 600;
+  width: 100%;
+}
+
+.menu-list .selected {
+  color: #03a9f4;
+}
+
+#content-wrapper {
+
+}
+
+#sidebar {
+
+}
+
+#content-page {
+  position: relative;
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 504px) {
+  #content-page .action-bar {
+    position: relative;
+  }
+}
+
+#content-page .action-bar h2 {
+  margin: 6px 0;
+}
+
+
+/* FOOTER */
+#footer {
+  color: #757575;
+  font-size: 12px;
+  font-weight: 400;
+  border-top: 1px solid #f2f2f2;
+  position: relative;
+  bottom: 0;
+  padding: 10px;
+  width: 100%;
+  text-align: center;
+}
+#footer div {
+  padding-top: 7px;
+}
+#footer p {
+  margin: 0;
+}

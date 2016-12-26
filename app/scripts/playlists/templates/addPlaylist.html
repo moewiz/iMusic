@@ -1,0 +1,23 @@
+<md-card>
+  <md-card-content>
+    <div class="intro">
+      <h2>{{ 'playlist.view.createPlaylist' | i18next }}</h2>
+    </div>
+    <form class="form-inline" name="playlistForm">
+      <md-input-container md-no-float class="md-block" flex>
+        <label>{{ 'playlist.view.playlistName' | i18next }}</label>
+        <md-icon md-svg-src="images/icons/playlist.svg"></md-icon>
+        <input type="text" title="Playlist name" name="name" ng-model="vm.cache.currentPlaylist.name" ng-maxlength="{{vm.validate.MAX_LENGTH}}" autocomplete="off" required>
+        <div ng-messages="playlistForm.name.$error" role="alert">
+          <div ng-message="required">{{ 'playlist.view.playlistCantEmpty' | i18next }}</div>
+          <div ng-message="maxlength">{{ 'playlist.view.playlistNameTooLong' | i18next }}</div>
+        </div>
+      </md-input-container>
+      <div align="right">
+        <md-button class="md-raised mybtn-success" ng-disabled="vm.isDisableCreateButton()" ng-click="vm.mappingFunc.createPlaylist($event)">{{ 'common.create' | i18next }}</md-button>
+
+        <md-button class="md-raised" ng-click="vm.showAndRefreshList()">{{ 'common.cancel' | i18next }}</md-button>
+      </div>
+    </form>
+  </md-card-content>
+</md-card>

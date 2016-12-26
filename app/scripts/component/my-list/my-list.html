@@ -1,0 +1,18 @@
+<div class="my-list umbala">
+    <span class="hide-details" ng-if="vm.activateHiddenBtn" ng-click="vm.config.hideList()">{{ 'component.myList.hideDetails' | i18next }} <i class="fa fa-angle-right"></i></span>
+    <span class="sync-action" ng-if="vm.activateSyncBtn" ng-show="vm.isEnableSyncButton()" ng-click="vm.config.updateRows(vm.data)">{{ 'component.myList.syncBtn' | i18next }}</span>
+
+  <md-list class="list-content">
+    <md-list-item ng-repeat="row in vm.data | orderBy:'name'" class="md-2-line">
+      <img alt="{{ row[vm.config.header1] }}" ng-src="images/song.png" class="md-avatar"/>
+      <div class="md-list-item-text">
+        <div class="header1">{{ row[vm.config.header1] }}</div>
+        <div class="header2">{{ row[vm.config.header2] }}</div>
+      </div>
+      <md-checkbox class="md-secondary row-check" aria-label="checkbox" ng-model="row.check"></md-checkbox>
+    </md-list-item>
+  </md-list>
+  <div ng-if="vm.data.length == 0" class="md-dialog-content" style="margin-left: 20px;">
+    {{ 'component.myList.noRows' | i18next }}
+  </div>
+</div>

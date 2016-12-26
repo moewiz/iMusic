@@ -1,0 +1,22 @@
+<md-card>
+  <md-card-content class="action-bar">
+    <h2 class="left">{{ 'common.manageSong' | i18next }}</h2>
+    <div class="right">
+      <md-button ng-hide="inputSearchFocus||vm.cache.query.name" class="md-raised mybtn-success miniable" ng-click="vm.mappingFunc.getAddForm()">
+        <i class="fa fa-plus"></i> {{ 'common.add' | i18next }}
+      </md-button>
+      <md-button ng-hide="inputSearchFocus||vm.cache.query.name" class="md-raised mybtn-del miniable" ng-disabled="vm.isDisableDeleteButton()" ng-click="vm.mappingFunc.deleteMultiSongs()">
+        <i class="fa fa-trash"></i> {{ 'common.delete' | i18next }}
+      </md-button>
+      <div class="search-layout">
+        <input type="search" title="Search" class="search-field" ng-model="vm.cache.query.name" ng-click="inputSearchFocus=true" ng-class="{'search-field-focus':vm.cache.query.name||inputSearchFocus}" placeholder="radioactive, uninstall, rolling in the deep,..." ng-blur="inputSearchFocus = false"/>
+        <i class="fa fa-times x-icon" aria-hidden="true" ng-click="vm.cache.query.name='';inputSearchFocus=false" ng-class="{'show-x-icon':inputSearchFocus||vm.cache.query.name}"></i>
+      </div>
+    </div>
+  </md-card-content>
+  <md-card-content>
+    <div my-spinner="vm.spinner">
+      <ov-table data="vm.songs" output="vm.retrieveOVTable" config="vm.config" mapping-func="vm.mappingFunc"></ov-table>
+    </div>
+  </md-card-content>
+</md-card>

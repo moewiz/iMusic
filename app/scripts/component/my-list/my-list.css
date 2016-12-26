@@ -1,0 +1,63 @@
+.my-list {
+  border-left: 2px solid #eee;
+  margin-left: 20px;
+}
+.my-list.umbala .hide-details {
+  color: #0b87f4;
+  opacity: 1;
+}
+.my-list.umbala .list-content {
+  opacity: 1;
+}
+.my-list .sync-action {
+  float: right;
+  font-style: italic;
+  color: #0b87f4;
+  border-radius: 3px;
+  padding: 5px 20px;
+  margin: 0 10px 5px;
+  font-size: 14px;
+  background-color: #eee;
+}
+.my-list .sync-action:hover {
+  font-weight: 600;
+}
+.my-list .hide-details {
+  opacity: 0;
+  float: right;
+  cursor: pointer;
+  border-radius: 3px;
+  padding: 5px 15px;
+  font-style: italic;
+  margin: 0 5px 5px;
+  outline: none;
+}
+.my-list .hide-details:hover {
+  background-color: #eee;
+  color: #0b87f4;
+}
+.my-list .hide-details i {
+  font-weight: 600;
+}
+.my-list .list-content {
+  clear: both;
+  max-height: 545px;
+  overflow: auto;
+  position: relative;
+  opacity: 0;
+  transition: all ease 1s;
+}
+.list-content .header1,
+.list-content .header2 {
+  display: list-item;
+  list-style: none;
+}
+.list-content .header1 {
+  font-weight: 600;
+}
+.list-content .header2 {
+  font-style: italic;
+}
+.list-content .row-check {
+  margin-left: 16px;
+}

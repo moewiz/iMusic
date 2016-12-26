@@ -1,0 +1,84 @@
+{
+  "appTitle": "iMusic",
+  "common": {
+    "welcome": "Chào mừng đến với iMusic",
+    "appName": "Quản lí Âm nhạc",
+    "song": "Bài hát",
+    "playlist":"Danh sách nhạc",
+    "manageSong": "Quản lý Bài hát",
+    "managePlaylist": "Quản lý Danh sách nhạc",
+    "name": "Tên",
+    "artist": "Nghệ sỹ",
+    "create": "Xác nhận",
+    "apply": "Cập nhật",
+    "ok": "Đồng ý",
+    "cancel":"Hủy",
+    "add": "Thêm",
+    "edit": "Sửa",
+    "delete": "Xóa",
+    "search": "Tìm kiếm",
+    "library": "Thư viện",
+    "success": "Thành công!",
+    "error": "Lỗi",
+    "skip": "Bỏ qua",
+    "finish": "Xong"
+  },
+  "component": {
+    "myList": {
+      "syncBtn": "Đồng bộ",
+      "hideDetails": "Ẩn",
+      "noRows": "Không có gì để hiển thị"
+    },
+    "ovTable": {
+      "editButton": "Sửa",
+      "deleteButton": "Xóa",
+      "action": "Xử lý"
+    },
+    "ovBreadcrumbs": {
+      "home": "Trang chủ"
+    }
+  },
+  "song": {
+    "view": {
+      "createSong": "Tạo bài hát",
+      "songName": "Tên bài hát",
+      "editSong": "Sửa bài hát",
+      "songCantEmpty": "Tên bài hát không được bỏ trống",
+      "songTooLong": "Tên bài hát quá dài"
+    },
+    "confirm" : {
+      "delete_title": "Xóa bài hát",
+      "delete_content": "Bạn chắc chắn muốn xóa bài hát này?",
+      "delete_multi_title": "Xóa nhiều bài hát",
+      "delete_multi_content": "Bạn chắn chắn muốn xóa những bài hát được chọn?"
+    },
+    "notification" : {
+      "delete_failed": "Thất bại khi xóa bài hát này",
+      "failed": "Thất bại!"
+    }
+  },
+  "playlist": {
+    "view": {
+      "createPlaylist": "Tạo danh sách nhạc",
+      "editPlaylist": "Sửa danh sách nhạc",
+      "songInPlaylist": "Bài hát trong danh sách",
+      "playlistName": "Tên danh sách",
+      "playlistNoSong": "Không có bài hát nào, chọn Sửa để cập nhật danh sách.",
+      "playlistCantEmpty": "Tên danh sách không được bỏ trống",
+      "playlistNameTooLong": "Tên danh sách quá dài",
+      "chooseSong": "Chọn bài hát",
+      "noSong": "Không có bài hát nào"
+    },
+    "notification": {
+      "playlistExisted": "Tên danh sách đã tồn tại",
+      "failed": "Thất bại!",
+      "songExisted": "Bài hát đã tồn tại trong danh sách"
+    },
+    "confirm" : {
+      "deleteTitle": "Xóa danh sách",
+      "deleteContent": "Bạn chắc chắn muốn xóa danh sách nhạc này?",
+      "deleteMultiTitle": "Xóa nhiều danh sách",
+      "deleteMultiContent": "Bạn chắn chắn muốn xóa những danh sách nhạc được chọn?"
+    }
+  }
+}

@@ -1,0 +1,8 @@
+#content-page .breadcrumbs a {
+  color: #03a9f4;
+  text-decoration: none;
+}
+
+#content-page .breadcrumbs a:hover {
+  color: #0B87F4;
+}

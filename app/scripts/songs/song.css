@@ -1,0 +1,109 @@
+.song-manager form.form-inline {
+  padding-top: 10px;
+}
+
+.song-manager button.md-raised.md-button.mybtn-success {
+  font-weight: 600;
+  background-color: #03a9f4;
+  color: #fff;
+}
+
+.song-manager button.md-raised.md-button.mybtn-success:not([disabled]):hover {
+  background-color: #0B87F4;
+}
+
+.song-manager button.md-raised.md-button.mybtn-success[disabled] {
+  color: rgba(0,0,0,0.38);
+  background-color: rgba(0,0,0,0.12);
+  cursor: not-allowed;
+}
+
+.song-manager button.md-raised.md-button.mybtn-del {
+  font-weight: 600;
+  background-color: #F44336;
+  color: #fff;
+}
+
+.song-manager button.md-raised.md-button.mybtn-del:not([disabled]):hover {
+  background-color: #D32F2F;
+}
+
+.song-manager button.md-raised.md-button.mybtn-del[disabled] {
+  color: rgba(0,0,0,0.38);
+  background-color: rgba(0,0,0,0.12);
+  cursor: not-allowed;
+}
+
+.song-manager .search-layout {
+  display: inline-block;
+  position: relative;
+}
+
+.song-manager .search-field {
+  outline: none;
+  cursor: pointer;
+  background: url(../../images/icons/search-icon.png) no-repeat 7px center;
+  padding: 7px 0 7px 35px;
+  width: 0;
+  border: 1px solid #757575;
+
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+
+  -webkit-transition: all .5s;
+  -moz-transition: all .5s;
+  transition: all .5s;
+}
+
+/* iPhone 6 Plus , iPad, Large */
+.song-manager .search-field-focus {
+  margin-top: 6px;
+  background-color: #fff;
+  width: 350px;
+  cursor: text;
+  border: 1px solid #757575;
+}
+
+.song-manager .x-icon {
+  outline: none;
+  position: absolute;
+  right: 14px;
+  top: 17px;
+  width: 15px;
+  height: 15px;
+  text-align: center;
+  display: none;
+}
+
+.song-manager .show-x-icon {
+  display: block;
+}
+
+
+/* style for placeholder */
+.song-manager .search-field::-webkit-input-placeholder { font-size: 11px; font-style: italic; }
+.song-manager .search-field::-moz-placeholder { font-size: 11px; font-style: italic; } /* firefox 19+ */
+.song-manager .search-field:-ms-input-placeholder { font-size: 11px; font-style: italic; } /* ie */
+
+/* hide cancel button for input type search */
+::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+
+@media screen and (max-width: 360px) {
+  .song-manager .search-field-focus {
+    width: 250px;
+  }
+}
+
+/* iPhone 6 */
+@media screen and (min-width: 361px) and (max-width: 635px) {
+  .song-manager .search-field-focus {
+    width: 280px;
+  }
+}

@@ -1,0 +1,9 @@
+<md-card hide-xs="">
+  <md-card-content>
+    <h4 hide-xs="" class="breadcrumbs">
+      <a href="#/">{{ 'component.ovBreadcrumbs.home' | i18next }}</a>
+      <i class="fa fa-angle-right fa-fw"></i>
+      <span class="breadcrumbs" ng-repeat="breadcrumb in data">{{ breadcrumb.i18nKey | i18next }}</span>
+    </h4>
+  </md-card-content>
+</md-card>

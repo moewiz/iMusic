@@ -1,0 +1,36 @@
+<md-card>
+  <md-card-content>
+    <div class="intro">
+      <h2 ng-if="vm.isFormAdd()" class="">{{ 'song.view.createSong' | i18next }}</h2>
+      <h2 ng-if="vm.isFormEdit()" class="">{{ 'song.view.editSong' | i18next }}</h2>
+    </div>
+
+    <form name="songForm" class="form-inline" >
+      <md-input-container class="md-block" flex>
+        <label>{{ 'song.view.songName' | i18next }}</label>
+        <md-icon md-svg-src="images/icons/name.svg"></md-icon>
+        <input type="text" ng-if="vm.isFormAdd()" name="name" ng-model="vm.cache.currentSong.name" required ng-maxlength="{{vm.validate.MAX_LENGTH}}" autocomplete="off"/>
+        <input type="text" ng-if="vm.isFormEdit()" name="name" ng-model="vm.cache.currentSong.name" required ng-maxlength="{{vm.validate.MAX_LENGTH}}" autocomplete="off"/>
+        <div ng-messages="songForm.name.$error" role="alert" ng-show="songForm.name.$touched" multiple>
+          <div ng-message="required">{{ 'song.view.songCantEmpty' | i18next }}</div>
+          <div ng-message="maxlength">{{ 'song.view.songTooLong' | i18next }}</div>
+        </div>
+      </md-input-container>
+
+      <md-input-container class="md-block" flex>
+        <label>{{ 'common.artist' | i18next }}</label>
+        <md-icon md-svg-src="images/icons/artist.svg"></md-icon>
+        <input type="text" name="artist" ng-model="vm.cache.currentSong.artist" />
+      </md-input-container>
+
+      <div align="right">
+        <!-- add create button -->
+        <md-button ng-if="vm.isFormAdd()" class="md-raised mybtn-success" ng-disabled="vm.isDisableCreateButton()" ng-click="vm.mappingFunc.createSong()">{{ 'common.create' | i18next }}</md-button>
+        <!-- edit apply button -->
+        <md-button ng-if="vm.isFormEdit()" class="md-raised mybtn-success" ng-disabled="vm.isDisableApplyButton(vm.cache.songTemp)" ng-click="vm.mappingFunc.editSong()" >{{ 'common.apply' | i18next }}</md-button>
+
+        <md-button class="md-raised" ng-click="vm.showAndRefreshList()">{{ 'common.cancel' | i18next }}</md-button>
+      </div>
+    </form>
+  </md-card-content>
+</md-card>

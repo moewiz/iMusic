@@ -1,0 +1,57 @@
+<table class="ov-table table">
+  <tr>
+    <td class="table-header">
+      <table class="table">
+        <tr>
+          <th ng-repeat="column in vm.config.columns" ng-class="column.checkbox ? 'input-checkbox' : (column.action ? 'action-column' : 'th-column')" ng-click="vm.sort.toggleSortBtn(column.key);vm.sort.activeSortBtn(column.key)">
+            <!-- checkbox -->
+            <span ng-if="column.checkbox"><md-checkbox aria-label="Selec All" ng-checked="vm.checkboxFunc.isCheckedAll()" md-indeterminate="vm.checkboxFunc.isIndeterminate()" ng-click="vm.checkboxFunc.toggleCheckboxAll()"></md-checkbox></span>
+            <!-- column -->
+            <span ng-if="!column.checkbox && !column.action" class="column">
+              {{ column.i18nKey | i18next }}
+              <i ng-if="!column.checkbox || !column.action" class="fa fa-sort-asc fa-fw sort-icon" ng-class="[{'fa-rotate-180': vm.reverse}, {'show-icon': vm.sort.checkActiveSortBtn(column.key)}]"></i>
+            </span>
+            <!-- action -->
+            <span ng-if="column.action">{{ 'component.ovTable.action' | i18next }}</span>
+          </th>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td class="table-body">
+      <div class="content-table">
+        <table ng-if="vm.config.checkOnRow === true" class="table table-hover">
+          <tr ng-repeat="row in vm.data | filter:vm.config.filter | orderBy:vm.orderBy:vm.reverse" ng-click="vm.checkboxFunc.toggleCheckbox(row)" ng-class="{'tr-selected': vm.checkboxFunc.existsCheckbox(row)}">
+            <td ng-repeat="column in vm.config.columns" ng-class="column.checkbox ? 'input-checkbox' : (column.action ? 'action-column' : 'data-row')">
+              {{ ::(column.key) ? row[column.key] : row[column.name] }}
+              <md-checkbox aria-label="checkbox"  ng-checked="vm.checkboxFunc.existsCheckbox(row)" ng-if="column.checkbox"></md-checkbox>
+              <md-button ng-if="column.action && vm.isActiveEditBtn" class="md-raised miniable" ng-click="vm.getEditForm(row, $event)">
+                <i class="fa fa-edit"></i> {{ 'component.ovTable.editButton' | i18next }}
+              </md-button>
+              <md-button ng-if="column.action && vm.isActiveDeleteBtn" class="md-raised miniable" ng-click="vm.deleteRow(row, $event)">
+                <i class="fa fa-trash"></i> {{ 'component.ovTable.deleteButton' | i18next }}
+              </md-button>
+            </td>
+          </tr>
+        </table>
+
+        <table ng-if="vm.config.checkOnRow === false" class="table table-hover">
+          <tr ng-repeat="row in vm.data | filter:vm.config.filter | orderBy:vm.orderBy:vm.reverse" ng-click="vm.checkboxFunc.selectOneRow(row);vm.mappingFunc.showDetails()"
+              ng-class="{'tr-selected': vm.checkboxFunc.existsCheckbox(row)}">
+            <td ng-repeat="column in vm.config.columns" ng-class="column.checkbox ? 'input-checkbox' : (column.action ? 'action-column' : 'data-row')">
+              {{ ::(column.key) ? row[column.key] : row[column.name] }}
+              <md-checkbox aria-label="checkbox" ng-click="vm.checkboxFunc.toggleCheckbox(row, $event);vm.mappingFunc.showDetails()" ng-checked="vm.checkboxFunc.existsCheckbox(row)" ng-if="column.checkbox"></md-checkbox>
+              <md-button ng-if="column.action && vm.isActiveEditBtn" class="md-raised miniable" ng-click="vm.getEditForm(row, $event)">
+                <i class="fa fa-edit"></i> {{ 'component.ovTable.editButton' | i18next }}
+              </md-button>
+              <md-button ng-if="column.action && vm.isActiveDeleteBtn" class="md-raised miniable" ng-click="vm.deleteRow(row, $event)">
+                <i class="fa fa-trash"></i> {{ 'component.ovTable.deleteButton' | i18next }}
+              </md-button>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </td>
+  </tr>
+</table>

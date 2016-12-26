@@ -1,0 +1,131 @@
+$primary-color = #03a9f4
+$primary-color-hover = #0B87F4
+$del-color = #f44336
+$del-color-hover = #d32f2f
+
+md-dialog .md-dialog-content
+  padding-bottom 0
+
+vendor(prop, args)
+  -webkit-{prop} args
+  -moz-{prop} args
+  {prop} args
+
+border-radius(val)
+  vendor("border-radius", val)
+box-sizing(val)
+  vendor("box-sizing", val)
+transition(val)
+  vendor("transition", val)
+
+.playlist-manager
+  form
+    &.form-inline
+      padding-top 10px
+  button
+    &.md-raised
+      &.md-button
+        &.mybtn-success
+          font-weight 600
+          background-color $primary-color
+          color #fff
+          &:not([disabled]):hover
+            background-color $primary-color-hover
+        &.mybtn-success[disabled]
+          color rgba(0,0,0,0.38)
+          background-color rgba(0,0,0,0.12)
+          cursor not-allowed
+        &.mybtn-del
+          font-weight 600
+          background-color $del-color
+          color #fff
+          &:not([disabled]):hover
+            background-color $del-color-hover
+        &.mybtn-del[disabled]
+          color rgba(0,0,0,0.38)
+          background-color rgba(0,0,0,0.12)
+          cursor not-allowed
+  .search-layout
+    display inline-block
+    position relative
+  .search-field
+    outline none
+    cursor pointer
+    background url(../../images/icons/search-icon.png) no-repeat 7px center
+    padding 7px 0 7px 35px
+    width 0
+    border 1px solid #757575
+
+    box-sizing(border-box)
+
+    border-radius(20px)
+
+    transition(all .5s)
+
+    &::-webkit-input-placeholder
+      font-size 11px
+      font-style italic
+    &::-moz-placeholder
+      font-size 11px
+      font-style italic
+    &:-ms-input-placeholder
+      font-size 11px
+      font-style italic
+  .search-field-focus
+    margin-top 6px
+    background-color #fff
+    width 350px
+    cursor text
+    border 1px solid #757575
+  .x-icon
+    outline none
+    position absolute
+    right 14px
+    top 17px
+    width 15px
+    height 15px
+    text-align center
+    display none
+  .show-x-icon
+    display block
+
+  .list-perform
+    list-style none
+    text-align center
+    padding 0
+
+    li i
+      outline none
+
+  .three-column
+    .song-list
+      height 350px
+      overflow auto
+    .playlist-name
+      display flex
+      margin 10px 10px 10px 0
+      .fa-search
+        position relative
+        left 22px
+        top 4px
+      .input-search
+        border-radius 13px
+        border 1px solid #bdbdbd
+        font-size 13px
+        outline none
+        padding 2px 10px 2px 30px
+        width 100%
+
+
+::-webkit-search-cancel-button
+  -webkit-appearance none
+
+@media screen and (max-width: 360px)
+  .playlist-manager
+    .search-field-focus
+      width 250px
+
+@media screen and (min-width: 361px) and (max-width: 635px)
+  .playlist-manager
+    .search-field-focus
+      width 280px

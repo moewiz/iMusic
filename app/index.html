@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>iMusic • Music Manager</title>
+  <meta name="description" content="iMusic - Music Manager">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <!-- build:css(.) styles/vendor.css -->
+  <!-- bower:css -->
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+  <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
+  <link rel="stylesheet" href="bower_components/angular-material-data-table/dist/md-data-table.css" />
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:css(.tmp) styles/main.css -->
+  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="scripts/main.css">
+  <link rel="stylesheet" href="scripts/songs/song.css">
+  <link rel="stylesheet" href="scripts/playlists/playlist.css">
+  <link rel="stylesheet" href="scripts/component/ov-breadcrumbs/ov-breadcrumbs.css">
+  <link rel="stylesheet" href="scripts/component/ov-table/ov-table.css">
+  <link rel="stylesheet" href="scripts/component/my-list/my-list.css">
+  <link rel="stylesheet" href="scripts/component/my-spinner/my-spinner.css">
+  <!-- endbuild -->
+</head>
+<body layout="column" ng-app="iMusicApp" ng-controller="mainCtrl">
+<!--[if lte IE 8]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<!-- Add your site or application content here -->
+
+<div id="header" layout="row">
+  <md-toolbar layout="row" class="md-toolbar-tools">
+    <md-button ng-click="toggleSidenav('sidebar')" hide-gt-sm class="md-icon-button menuBtn">
+      <md-icon aria-label="Menu" md-svg-icon="images/icons/menu.svg"></md-icon>
+    </md-button>
+    <h1><i class="fa fa-apple"></i> &nbsp;{{ 'appTitle' | i18next }}</h1>
+    <span flex></span>
+  </md-toolbar>
+</div>
+
+<div id="content-wrapper" layout="row" flex>
+  <div id="sidenav" layout="column">
+    <md-sidenav flex class="md-sidenav-left" md-component-id="sidebar" md-is-locked-open="$mdMedia('gt-sm')" md-whiteframe="4">
+      <md-list class="menu-list">
+        <md-button ng-href="#/songs" ng-class="{'selected':isSelected('/songs')}">
+          <i class="fa fa-music fa-fw"></i> {{ 'common.song' | i18next }}
+        </md-button>
+        <md-button ng-href="#/playlists" ng-class="{'selected':isSelected('/playlists')}">
+          <i class="fa fa-list-ul fa-fw"></i> {{ 'common.playlist' | i18next }}
+        </md-button>
+      </md-list>
+    </md-sidenav>
+  </div>
+
+  <!-- Content -->
+  <div id="content-page" layout="column" flex>
+    <md-content layout="column" flex class="md-padding">
+      <div ng-view="" ng-cloak>
+
+      </div>
+    </md-content>
+  </div>
+</div>
+
+<div id="footer" layout="row">
+  <div class="container">
+    <p>Copyright &copy; 2014, TMA Solutions</p>
+  </div>
+  <md-select aria-label="lang" ng-model="selectedLanguage" class="language">
+    <md-option  ng-repeat="lang in languages" title="{{lang.key}}" value="{{lang.key}}">{{lang.title}}</md-option>
+  </md-select>
+</div>
+
+
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+<!--<script>-->
+<!--!function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){-->
+<!--(A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),-->
+<!--r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)-->
+<!--}(window,document,'script','https://www.google-analytics.com/analytics.js','ga');-->
+
+<!--ga('create', 'UA-XXXXX-X');-->
+<!--ga('send', 'pageview');-->
+<!--</script>-->
+
+<!-- build:js(.) scripts/vendor.js -->
+<!-- bower:js -->
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/angular-aria/angular-aria.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="bower_components/angular-messages/angular-messages.js"></script>
+<script src="bower_components/angular-material/angular-material.js"></script>
+<script src="bower_components/i18next/i18next.js"></script>
+<script src="bower_components/ng-i18next/dist/ng-i18next.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+
+<!-- build:js({.tmp,app}) scripts/scripts.js -->
+<script src="scripts/app.module.js"></script>
+<script src="scripts/component/component.module.js"></script>
+<script src="scripts/app.config.js"></script>
+<script src="scripts/i18nextConfig.js"></script>
+<script src="scripts/main.controller.js"></script>
+<script src="scripts/shared/common.service.js"></script>
+<script src="scripts/component/ov-breadcrumbs/ov-breadcrumbs.directive.js"></script>
+<script src="scripts/component/ov-breadcrumbs/ov-breadcrumbs.constant.js"></script>
+<script src="scripts/component/ov-table/ov-table.directive.js"></script>
+<script src="scripts/component/ov-table/ov-table.constant.js"></script>
+<script src="scripts/component/ov-table/ov-table.controller.js"></script>
+<script src="scripts/component/my-list/my-list.directive.js"></script>
+<script src="scripts/component/my-list/my-list.constant.js"></script>
+<script src="scripts/component/my-list/my-list.controller.js"></script>
+<script src="scripts/component/my-spinner/my-spinner.directive.js"></script>
+<script src="scripts/songs/song.service.js"></script>
+<script src="scripts/songs/song.constant.js"></script>
+<script src="scripts/songs/song.controller.js"></script>
+<script src="scripts/playlists/playlist.service.js"></script>
+<script src="scripts/playlists/playlist.constant.js"></script>
+<script src="scripts/playlists/playlist.controller.js"></script>
+<!-- endbuild -->
+</body>
+</html>
